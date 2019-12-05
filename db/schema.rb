@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_073032) do
+ActiveRecord::Schema.define(version: 2019_12_05_122109) do
 
   create_table "coins", force: :cascade do |t|
     t.string "name", null: false
     t.string "symbol", null: false
     t.integer "scale", default: 8, null: false
+    t.boolean "display", default: false
   end
 
   create_table "price_sources", force: :cascade do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_073032) do
     t.integer "price_source_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_coin_id", null: false
     t.index ["price_source_id"], name: "index_prices_on_price_source_id"
   end
 
