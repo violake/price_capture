@@ -1,0 +1,29 @@
+<h2> <%= @coin.symbol.upcase %> price hisoty </h2>
+<table>
+  <tr>
+    <th>Captured Time</th>
+    <th>Last</th>
+    <th>Bid</th>
+    <th>Ask</th>
+  </tr>
+  <% @prices.each do |price| %>
+  <tr>
+    <td>
+      <%= price.created_at %>
+    </td>
+    <td> |
+      <%= price.last %>
+    </td>
+    <td> |
+      <%= price.bid %>
+    </td>
+    <td> |
+      <%= price.ask %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to 'Back', coins_path %>
+</p>

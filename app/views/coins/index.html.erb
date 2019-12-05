@@ -1,0 +1,37 @@
+<h1> coin list </h1>
+<br>
+<table>
+  <tr>
+    <th>Coin</th>
+    <th>Symbol</th>
+    <th>Last</th>
+    <th>Bid</th>
+    <th>Ask</th>
+    <th colspan="2">Edit Option</th>
+  </tr>
+  <% @coins.each do |coin| %>
+  <tr>
+    <td>
+      <%= coin[:name] %>
+    </td>
+    <td> |
+      <%= coin[:symbol] %>
+    </td>
+    <td> |
+      <%= coin[:last] %>
+    </td>
+    <td> |
+      <%= coin[:bid] %>
+    </td>
+    <td> |
+      <%= coin[:ask] %>
+    </td>
+    <td>|
+      <%= link_to 'Capture', capture_path(id: coin[:id]) %>
+    </td>
+    <td>|
+      <%= link_to 'History', coin_path(id: coin[:id]) %>
+    </td>
+  </tr>
+  <% end %>
+</table>
